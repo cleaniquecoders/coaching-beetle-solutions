@@ -13,7 +13,7 @@ class SvHomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth:supervisor');
+        $this->middleware('auth:supervisor');
     }
 
     /**
@@ -23,6 +23,7 @@ class SvHomeController extends Controller
      */
     public function index()
     {
+        dd(1);
         return view('home');
     }
 }

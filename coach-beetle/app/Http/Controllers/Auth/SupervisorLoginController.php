@@ -68,6 +68,7 @@ class SupervisorLoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
+        return 'hello ' . $user->name;
         return redirect()->route('sv.home');
     }
 }
