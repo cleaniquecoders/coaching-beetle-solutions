@@ -9,9 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -75,7 +72,20 @@
 
         <main class="py-4">
             @yield('content')
+            <div class="btn btn-primary" onclick="clickme()">Click here</div>
         </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" ></script>
+
+    <script type="text/javascript">
+        function clickme()
+        {
+            $.get("{{ url('isi-rumah/1/code') }}", function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        }
+    </script>
 </body>
 </html>

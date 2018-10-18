@@ -33,3 +33,8 @@ Route::post('isi-rumah/{user}/show/{id}', 'IsiRumahController@show');
 Route::get('isi-rumah/{user}/edit/{id}', 'IsiRumahController@edit');
 Route::put('isi-rumah/{user}/{id}', 'IsiRumahController@update');
 Route::delete('isi-rumah/{user}/{id}', 'IsiRumahController@destroy');
+
+Route::get('isi-rumah/{user}/code', function($user) {
+	return str_pad(\App\User::where('id', $user)->count() + 1, 3, '0', STR_PAD_LEFT);
+});
+
