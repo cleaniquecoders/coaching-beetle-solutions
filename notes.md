@@ -5,6 +5,7 @@
 1. Use different table - set *protected $table = 'other_user_table';`
 2. Different field name - overwrite `LoginController` `username` method - [documentation](https://laravel.com/docs/5.7/authentication#included-views)
 3. [Custom Login dengan Memodifikasi Auth Laravel](https://www.laravel.web.id/2017/12/11/custom-login-dengan-memodifikasi-auth-laravel/)
+4. [Custom User Provider](https://code.tutsplus.com/tutorials/how-to-create-a-custom-authentication-guard-in-laravel--cms-29667)
 
 ## Form validation
 
@@ -35,6 +36,13 @@ In your view then you can display that session variable
 @if(session()->has('your_session_variable'))  
 	{{Session::get('your_session_varible',"session_not_set(default value)") }}
 @endif
+```
+
+### Session with Array
+
+```php 
+// user[27][steps] = 1
+session()->push('user.27.steps', 1);
 ```
 
 ### Intermediate Approach
