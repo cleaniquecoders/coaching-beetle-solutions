@@ -41,6 +41,14 @@ In your view then you can display that session variable
 
 Refer [Sharing Data Between Views](https://scotch.io/tutorials/sharing-data-between-views-using-laravel-view-composers)
 
+## Create Code 
+
+```php 
+$isiRumah = new IsiRumah();
+$isiRumah->code = str_pad(IsiRumah::where('user_id', $user)->count() + 1, 3, '0', STR_PAD_LEFT); // 001
+$isiRumah->save();
+```
+
 ## Page routing
 
 *Refer documentation*
